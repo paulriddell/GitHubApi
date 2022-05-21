@@ -6,7 +6,7 @@ using GitHubClient.Api.Dtos;
 
 namespace GitHubClient.Api.Controllers
 {
-
+    [ApiVersion("1")]    
     [ApiController]
     public class ContributorController : ControllerBase
     {
@@ -19,9 +19,8 @@ namespace GitHubClient.Api.Controllers
             _logger = logger;
         }
 
-        
-        [Route("{owner}/{repo}/contributors")]
-        [HttpGet]
+        [HttpGet, MapToApiVersion("1")]
+        [Route("api/v{version:apiVersion}/{owner}/{repo}/contributors")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

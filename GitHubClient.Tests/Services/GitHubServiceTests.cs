@@ -1,5 +1,4 @@
-﻿using GitHubClient.Api.Query;
-using Moq;
+﻿using Moq;
 using GitHubClient.Api.Interfaces;
 using GitHubClient.Api.Dtos;
 using FluentAssertions;

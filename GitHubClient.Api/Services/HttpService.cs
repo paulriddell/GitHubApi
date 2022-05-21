@@ -10,7 +10,6 @@ namespace GitHubClient.Api.Services
         {
             _httpClient = httpClientFactory.CreateClient();
         }
-
         public async Task<HttpResponseMessage> GetAsync(string url, Dictionary<string, string> requestHeaders)
         {
             var request = CreateRequest(HttpMethod.Get, url, null, requestHeaders);
